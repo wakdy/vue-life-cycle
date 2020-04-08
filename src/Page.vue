@@ -1,26 +1,23 @@
 <template>
-  <div id="page">页面{{ message }}
-{{title}}
-
-       <List :title="title"></List>
+  <div id="page">
+    页面{{ message }}
+    {{ title }}
+    <div>
+      <List :title="title"></List>
+    </div>
   </div>
- 
 </template>
 <script>
-import List from "./List";
+import List from './List';
 export default {
-  props:['title'],
+  props: ['title'],
   data() {
-    
     return {
-  
       message: 'page msg',
     };
   },
-  components:{
-      List
-
-
+  components: {
+    List,
   },
 
   beforeCreate() {
