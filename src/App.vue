@@ -1,32 +1,31 @@
 <template>
-<div id="container">
-  <h1>vue 的生命周期{{ message }}</h1>
+  <div id="container">
+    <h1>苹果{{ message }}</h1>
 
-  <button @click="handleTogglePage">切换page</button>
-  <Page :title="title"></Page>
-
+    <button @click="handleModify">Modify Val</button>
+    <!-- <Page :title="title"></Page> -->
   </div>
 </template>
 <script>
-import Page from './Page'
+import Page from './Page';
 export default {
   data() {
     return {
       show: true,
-      message: 'App msg',
-      title:"标题"
+      message: 0,
+      title: '标题',
     };
   },
-  components:{
-      Page,
-
+  components: {
+    Page,
   },
-  methods:{
-      handleTogglePage(){
-          this.show = !this.show;
-          this.title = "abcd"
-      }
+  methods: {
 
+    handleModify() {
+      for (let i = 0; i <= 100; i++) {
+        this.message = i;
+      }
+    },
   },
 
   beforeCreate() {
