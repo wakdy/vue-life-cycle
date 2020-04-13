@@ -1,6 +1,10 @@
 <template>
   <div id="container">
-    <h1>苹果{{ message }}</h1>
+    <h1>苹果</h1>
+
+    <ul>
+      <li v-for="(item, index) in arr" :key="item.id">{{item.val}}</li>
+    </ul>
 
     <button @click="handleModify">Modify Val</button>
     <!-- <Page :title="title"></Page> -->
@@ -11,20 +15,25 @@ import Page from './Page';
 export default {
   data() {
     return {
-      show: true,
-      message: 0,
-      title: '标题',
+      arr:[
+        {id:3,val:3},
+        {id:0,val:9},
+        {id:19,val:12}
+      ]
+
     };
   },
   components: {
     Page,
   },
   methods: {
+  
 
     handleModify() {
-      for (let i = 0; i <= 100; i++) {
-        this.message = i;
-      }
+      this.arr[1].val = 100;
+      // this.arr.splice(1,1,'jjj')
+      // this.$set(this.arr, 1, 'ddd')
+     
     },
   },
 
